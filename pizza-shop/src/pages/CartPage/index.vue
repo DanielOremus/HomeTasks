@@ -4,7 +4,7 @@
       <h1>Cart</h1>
       <div>
         <router-link to="/">Home</router-link>
-        <!-- <div>Всього: {{ getTotalPizzaPrice }} грн</div> -->
+        <div v-if="cartList.length">Всього: {{ getTotalPizzaPrice }} грн</div>
       </div>
       <cart-list />
     </main-master-page>
@@ -23,6 +23,7 @@ export default {
   },
   computed: {
     ...mapGetters("pizza", ["getTotalPizzaPrice"]),
+    ...mapGetters("cart", ["cartList"]),
   },
 };
 </script>

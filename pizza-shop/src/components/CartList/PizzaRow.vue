@@ -59,8 +59,9 @@ export default {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  border: 2px solid black;
 }
 .pizza-row-container img {
-  width: 50px;
+  width: 80px;
 }
 </style>

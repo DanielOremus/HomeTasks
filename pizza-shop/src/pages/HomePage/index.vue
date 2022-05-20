@@ -4,7 +4,7 @@
       <h1>Home</h1>
       <div>
         <router-link to="/cart">Go to Cart</router-link>
-        <!-- <div>Всього: {{ getTotalPizzaPrice }} грн</div> -->
+        <div>Всього: {{ getTotalPizzaPrice }} грн</div>
       </div>
       <pizza-list />
     </main-master-page>
