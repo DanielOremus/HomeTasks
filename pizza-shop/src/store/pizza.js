@@ -6,50 +6,43 @@ export default {
       pizzaList: [
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/211/211848/large/janicsar.png",
+          imgSrc: require("@/assets/images/janicsar.png"),
           title: "Health pizza",
           price: 100,
         },
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/200/200865/large/hawai.png",
+          imgSrc: require("@/assets/images/hawai.png"),
           title: "Hawaii pizza",
           price: 200,
         },
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/211/211842/large/calipso.png",
+          imgSrc: require("@/assets/images/calipso.png"),
           title: "Calypso pizza",
           price: 300,
         },
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/201/201407/large/tnt.png",
+          imgSrc: require("@/assets/images/tnt.png"),
           title: "TNT pizza",
           price: 100,
         },
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/201/201366/large/sajtos.png",
+          imgSrc: require("@/assets/images/sajtos.png"),
           title: "Cheese pizza",
           price: 100,
         },
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/201/201401/large/mexikoi.png",
+          imgSrc: require("@/assets/images/mexikoi.png"),
           title: "Mexico pizza",
           price: 100,
         },
         {
           id: uuidv4(),
-          imgSrc:
-            "https://admin.kemencespizzeria.hu/media/products/201/201422/large/csirkemelles.png",
+          imgSrc: require("@/assets/images/csirkemelles.png"),
           title: "Chicken pizza",
           price: 100,
         },
@@ -60,13 +53,15 @@ export default {
     pizzaList: (state) => state.pizzaList,
     getPizzaById: (state) => (pizzaId) =>
       state.pizzaList.find((item) => item.id === pizzaId),
-    getTotalPizzaPrice: (state) =>
-      state.cartList.reduce((prevSum, cartItem) => {
+    getTotalPizzaPrice: (state, rootGetters) => {
+      const cartList = rootGetters["cart/cartList"];
+      return cartList.reduce((prevSum, cartItem) => {
         const pizza = state.pizzaList.find(
           (item) => item.id === cartItem.pizzaId
         );
         return prevSum + pizza.price * cartItem.count;
-      }, 0),
+      }, 0);
+    },
   },
   mutations: {},
   actions: {},
