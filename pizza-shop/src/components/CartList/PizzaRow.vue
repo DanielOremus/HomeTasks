@@ -5,10 +5,10 @@
     </div>
     <div>{{ pizza.title }} | {{ pizza.price }} грн</div>
     <div>
-      <button @click="onDecrement">-</button>
+      <v-btn small @click="onDecrement">-</v-btn>
       <span>{{ cartItem.count }}</span>
-      <button @click="onIncrement">+</button>
-      <button @click="onDelete">x</button>
+      <v-btn small @click="onIncrement">+</v-btn>
+      <v-btn small @click="onDelete">x</v-btn>
     </div>
   </div>
 </template>

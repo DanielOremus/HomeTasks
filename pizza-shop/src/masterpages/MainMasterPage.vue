@@ -17,6 +17,24 @@
           <li>Адреса: dabee dabee dabee</li>
         </ul>
       </slot>
+
+      <v-footer class="bg-grey-lighten-1">
+        <v-row justify="center" no-gutters>
+          <v-btn
+            v-for="link in links"
+            :key="link"
+            color="white"
+            variant="text"
+            class="mx-2"
+            rounded="xl"
+          >
+            {{ link }}
+          </v-btn>
+          <v-col class="text-center text-white mt-4" cols="12">
+            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          </v-col>
+        </v-row>
+      </v-footer>
     </div>
   </div>
 </template>
@@ -24,14 +42,9 @@
 <script>
 export default {
   name: "MainMasterPage",
-
-  data() {
-    return {
-      owner: {
-        name: "Іван",
-      },
-    };
-  },
+  data: () => ({
+    links: ["Home", "About Us", "Contact Us"],
+  }),
 };
 </script>
 

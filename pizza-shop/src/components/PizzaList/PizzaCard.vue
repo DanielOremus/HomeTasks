@@ -3,7 +3,7 @@
     <div><img :src="pizza.imgSrc" alt="" /></div>
     <div>{{ pizza.title }}</div>
     <div>{{ pizza.price }} грн</div>
-    <div><button @click="onAdd">+</button></div>
+    <div><v-btn @click="onAdd">+</v-btn></div>
   </div>
 </template>
 
