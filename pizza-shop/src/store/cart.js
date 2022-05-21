@@ -36,8 +36,6 @@ export default {
     },
     onDelete(state, itemId) {
       state.cartList = state.cartList.filter((item) => item.id !== itemId);
-      console.log(itemId);
-      console.log(state.cartList);
     },
   },
   actions: {

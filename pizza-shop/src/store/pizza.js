@@ -47,6 +47,8 @@ export default {
           price: 100,
         },
       ],
+      searchWord: null,
+      filteredPizzaList: [],
     };
   },
   getters: {
@@ -62,7 +64,24 @@ export default {
         return prevSum + pizza.price * cartItem.count;
       }, 0);
     },
+    filteredPizzaList(state) {
+      if (state.searchWord) {
+        return (state.filteredPizzaList = state.pizzaList.filter((item) =>
+          item.title.toLowerCase().includes(state.searchWord.toLowerCase())
+        ));
+      } else {
+        return state.pizzaList;
+      }
+    },
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    setSearchWord(state, searchWord) {
+      state.searchWord = searchWord;
+    },
+  },
+  actions: {
+    setSearchWord({ commit }, newSearchWord) {
+      commit("setSearchWord", newSearchWord);
+    },
+  },
 };

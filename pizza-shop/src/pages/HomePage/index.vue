@@ -6,13 +6,16 @@
         <router-link to="/cart">Go to Cart</router-link>
         <div>Всього: {{ getTotalPizzaPrice }} грн</div>
       </div>
+      <div>
+        <v-text-field label="Search pizza" v-model="searchWord"></v-text-field>
+      </div>
       <pizza-list />
     </main-master-page>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import MainMasterPage from "@/masterpages/MainMasterPage.vue";
 import PizzaList from "@/components/PizzaList";
 export default {
@@ -21,8 +24,21 @@ export default {
     MainMasterPage,
     PizzaList,
   },
+  data() {
+    return {
+      searchWord: null,
+    };
+  },
   computed: {
     ...mapGetters("pizza", ["getTotalPizzaPrice"]),
+  },
+  watch: {
+    searchWord(newValue) {
+      this.setSearchWord(newValue);
+    },
+  },
+  methods: {
+    ...mapActions("pizza", ["setSearchWord"]),
   },
 };
 </script>

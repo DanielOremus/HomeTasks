@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <pizza-card v-for="pizza in pizzaList" :key="pizza.id" :pizza="pizza" />
+    <pizza-card
+      v-for="pizza in filteredPizzaList"
+      :key="pizza.id"
+      :pizza="pizza"
+    />
   </div>
 </template>
 
@@ -13,7 +17,7 @@ export default {
     PizzaCard,
   },
   computed: {
-    ...mapGetters("pizza", ["pizzaList"]),
+    ...mapGetters("pizza", ["filteredPizzaList"]),
   },
 };
 </script>
