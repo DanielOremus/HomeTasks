@@ -6,7 +6,7 @@
         <router-link to="/cart">Go to Cart</router-link>
         <div>Всього: {{ getTotalPizzaPrice }} грн</div>
       </div>
-      <div>
+      <div class="searchArea">
         <v-text-field label="Search pizza" v-model="searchWord"></v-text-field>
       </div>
       <pizza-list />
@@ -43,4 +43,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.searchArea {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+</style>

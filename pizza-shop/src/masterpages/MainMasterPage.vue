@@ -9,43 +9,41 @@
     <div>
       <slot> Немає контенту </slot>
     </div>
-    <div>
-      <slot name="footer">
-        <h1>Контакти</h1>
-        <ul>
-          <li>Телефон: dabee dabee dabee</li>
-          <li>Адреса: dabee dabee dabee</li>
-        </ul>
-      </slot>
+    <div></div>
+    <v-footer class="bg-grey-lighten-1">
+      <v-row justify="center" no-gutters>
+        <v-btn
+          color="white"
+          variant="text"
+          class="mx-2"
+          rounded="xl"
+          @click="$this.router.push('/cart')"
+          >HOME</v-btn
+        >
+        <v-btn color="white" variant="text" class="mx-2" rounded="xl"
+          >CART</v-btn
+        >
+        <v-btn color="white" variant="text" class="mx-2" rounded="xl"
+          >CONTACT US</v-btn
+        >
 
-      <v-footer class="bg-grey-lighten-1">
-        <v-row justify="center" no-gutters>
-          <v-btn
-            v-for="link in links"
-            :key="link"
-            color="white"
-            variant="text"
-            class="mx-2"
-            rounded="xl"
-          >
-            {{ link }}
-          </v-btn>
-          <v-col class="text-center text-white mt-4" cols="12">
-            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-          </v-col>
-        </v-row>
-      </v-footer>
-    </div>
+        <v-col class="text-center text-white mt-4" cols="12">
+          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
   </div>
 </template>
 
 <script>
 export default {
   name: "MainMasterPage",
-  data: () => ({
-    links: ["Home", "About Us", "Contact Us"],
-  }),
+  data: () => ({}),
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+div {
+  text-align: center;
+}
+</style>

@@ -3,7 +3,10 @@
     <div>
       <img :src="pizza.imgSrc" alt="" />
     </div>
-    <div>{{ pizza.title }} | {{ pizza.price }} грн</div>
+    <div>
+      {{ pizza.title }} | {{ pizza.price * cartItem.count * multiplier }} грн |
+      {{ cartItem.size }} см
+    </div>
     <div>
       <v-btn small @click="onDecrement">-</v-btn>
       <span>{{ cartItem.count }}</span>
@@ -25,11 +28,22 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("pizza", ["getPizzaById"]),
+    ...mapGetters("pizza", ["getPizzaById", "getMultiplier"]),
     pizza() {
       return this.getPizzaById(this.cartItem.pizzaId);
     },
+    multiplier() {
+      switch (this.cartItem.size) {
+        default:
+          return 1;
+        case 36:
+          return 1.7;
+        case 45:
+          return 2.89;
+      }
+    },
   },
+
   methods: {
     ...mapActions("cart", ["cartAction"]),
     onDecrement() {

@@ -10,17 +10,18 @@ export default {
     cartList: (state) => state.cartList,
   },
   mutations: {
-    addPizzaToCart(state, pizzaIdToAdd) {
+    addPizzaToCart(state, data) {
       const pizza = state.cartList.find(
-        (item) => item.pizzaId === pizzaIdToAdd
+        (item) => item.pizzaId === data.pizzaId
       );
-      if (pizza) {
+      if (pizza && pizza.size == data.pizzaSize) {
         pizza.count++;
       } else {
         state.cartList.push({
           id: uuidv4(),
-          pizzaId: pizzaIdToAdd,
+          pizzaId: data.pizzaId,
           count: 1,
+          size: parseInt(data.pizzaSize),
         });
       }
     },
@@ -39,8 +40,8 @@ export default {
     },
   },
   actions: {
-    addPizzaToCart({ commit }, pizzaId) {
-      commit("addPizzaToCart", pizzaId);
+    addPizzaToCart({ commit }, data) {
+      commit("addPizzaToCart", data);
     },
     cartAction({ commit }, payload) {
       switch (payload.type) {

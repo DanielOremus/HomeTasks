@@ -61,7 +61,19 @@ export default {
         const pizza = state.pizzaList.find(
           (item) => item.id === cartItem.pizzaId
         );
-        return prevSum + pizza.price * cartItem.count;
+        let multiplier = 0;
+        switch (cartItem.size) {
+          case 24:
+            multiplier = 1;
+            break;
+          case 36:
+            multiplier = 1.7;
+            break;
+          case 45:
+            multiplier = 2.89;
+            break;
+        }
+        return prevSum + multiplier * cartItem.count * pizza.price;
       }, 0);
     },
     filteredPizzaList(state) {
