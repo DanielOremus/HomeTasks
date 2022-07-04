@@ -3,8 +3,7 @@
     <main-master-page>
       <h1>Home</h1>
       <div>
-        <router-link to="/cart">Go to Cart</router-link>
-        <div>Всього: {{ getTotalPizzaPrice }} грн</div>
+        <div>Total: {{ getTotalPizzaPrice }} грн</div>
       </div>
       <div class="searchArea">
         <v-text-field label="Search pizza" v-model="searchWord"></v-text-field>

@@ -3,8 +3,7 @@
     <main-master-page>
       <h1>Cart</h1>
       <div>
-        <router-link to="/">Home</router-link>
-        <div v-if="cartList.length">Всього: {{ getTotalPizzaPrice }} грн</div>
+        <div v-if="cartList.length">Total: {{ getTotalPizzaPrice }} грн</div>
       </div>
       <cart-list />
     </main-master-page>

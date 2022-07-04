@@ -12,15 +12,23 @@
     <div></div>
     <v-footer class="bg-grey-lighten-1">
       <v-row justify="center" no-gutters>
+        <v-btn color="white" variant="text" class="mx-2" rounded="xl"
+          >HOME</v-btn
+        >
         <v-btn
           color="white"
           variant="text"
           class="mx-2"
           rounded="xl"
-          @click="$this.router.push('/cart')"
-          >HOME</v-btn
+          @click="$router.push('/list')"
+          >LIST</v-btn
         >
-        <v-btn color="white" variant="text" class="mx-2" rounded="xl"
+        <v-btn
+          color="white"
+          variant="text"
+          class="mx-2"
+          rounded="xl"
+          @click="$router.push('/cart')"
           >CART</v-btn
         >
         <v-btn color="white" variant="text" class="mx-2" rounded="xl"
@@ -28,7 +36,7 @@
         >
 
         <v-col class="text-center text-white mt-4" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — <strong>Pizza Shop</strong>
         </v-col>
       </v-row>
     </v-footer>
