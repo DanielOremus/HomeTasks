@@ -2,7 +2,7 @@
   <div>
     <div>
       <slot name="header">
-        <h2>Моя піцерія</h2>
+        <h2>Pizzeria</h2>
         <h3>Welcome, customer</h3>
       </slot>
     </div>
@@ -12,7 +12,12 @@
     <div></div>
     <v-footer class="bg-grey-lighten-1">
       <v-row justify="center" no-gutters>
-        <v-btn color="white" variant="text" class="mx-2" rounded="xl"
+        <v-btn
+          color="white"
+          variant="text"
+          class="mx-2"
+          rounded="xl"
+          @click="$router.push('/')"
           >HOME</v-btn
         >
         <v-btn
@@ -31,12 +36,9 @@
           @click="$router.push('/cart')"
           >CART</v-btn
         >
-        <v-btn color="white" variant="text" class="mx-2" rounded="xl"
-          >CONTACT US</v-btn
-        >
 
         <v-col class="text-center text-white mt-4" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Pizza Shop</strong>
+          {{ new Date().getFullYear() }} — <strong>Pizzeria</strong>
         </v-col>
       </v-row>
     </v-footer>

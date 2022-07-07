@@ -1,7 +1,7 @@
 <template>
   <div>
     <main-master-page>
-      <h1>Cart</h1>
+      <h4>Cart</h4>
       <div>
         <div v-if="cartList.length">Total: {{ getTotalPizzaPrice }} грн</div>
       </div>

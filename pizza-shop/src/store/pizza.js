@@ -73,7 +73,7 @@ export default {
             multiplier = 2.89;
             break;
         }
-        return prevSum + multiplier * cartItem.count * pizza.price;
+        return Math.round(prevSum + multiplier * cartItem.count * pizza.price);
       }, 0);
     },
     filteredPizzaList(state) {

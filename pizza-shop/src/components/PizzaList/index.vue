@@ -24,7 +24,8 @@ export default {
 
 <style lang="css" scoped>
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
   justify-content: center;
 }
 </style>

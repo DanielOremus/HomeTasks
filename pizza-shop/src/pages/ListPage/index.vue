@@ -1,7 +1,7 @@
 <template>
   <div>
     <main-master-page>
-      <h1>Home</h1>
+      <h4>List</h4>
       <div>
         <div>Total: {{ getTotalPizzaPrice }} грн</div>
       </div>
@@ -44,7 +44,7 @@ export default {
 
 <style lang="css" scoped>
 .searchArea {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 </style>
