@@ -1,13 +1,17 @@
 <template>
-  <div>
+  <div class="header">
     <main-master-page>
-      <h4>List</h4>
-      <div>
-        <div>Total: {{ getTotalPizzaPrice }} грн</div>
+      <div class="title-total">
+        <h4>List</h4>
+        <div>
+          <div>Total: {{ getTotalPizzaPrice }} грн</div>
+          <br />
+        </div>
       </div>
       <div class="searchArea">
         <v-text-field label="Search pizza" v-model="searchWord"></v-text-field>
       </div>
+
       <pizza-list />
     </main-master-page>
   </div>
@@ -44,7 +48,24 @@ export default {
 
 <style lang="css" scoped>
 .searchArea {
-  margin-left: 300px;
-  margin-right: 300px;
+  color: white;
+  background-image: url("@/assets/images/card-bg.png");
+  background-repeat: repeat;
+  margin-left: 376px;
+  margin-right: 376px;
+  border-left: 4px solid rgb(40, 40, 40);
+  border-right: 4px solid rgb(40, 40, 40);
+  border-top: 4px solid rgb(40, 40, 40);
+
+  border-bottom: 4px solid #d94f2b;
+}
+.header {
+  background-image: url("@/assets/images/list-bg.jpg");
+  background-size: cover;
+}
+.title-total {
+  background-image: url("@/assets/images/card-bg.png");
+  background-repeat: repeat;
+  color: white;
 }
 </style>

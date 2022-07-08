@@ -25,7 +25,7 @@ export default {
 <style lang="css" scoped>
 .container {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: 288px 288px 288px 288px;
   justify-content: center;
 }
 </style>

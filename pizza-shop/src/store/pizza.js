@@ -8,42 +8,56 @@ export default {
           id: uuidv4(),
           imgSrc: require("@/assets/images/janicsar.png"),
           title: "Health pizza",
+          description:
+            "The Janicsár pizza dough is spread with a sour cream base and topped with sheep's cheese, gyros meat, red onion and paprika",
           price: 100,
         },
         {
           id: uuidv4(),
           imgSrc: require("@/assets/images/hawai.png"),
           title: "Hawaii pizza",
+          description:
+            "Hawaiian pizza is also made with a tomato pizza base, lots of ham, corn, pineapple and cheese. It owes its sweet and sour taste",
           price: 200,
         },
         {
           id: uuidv4(),
           imgSrc: require("@/assets/images/calipso.png"),
           title: "Calypso pizza",
+          description:
+            "Spread the Calypso pizza dough with sour cream and tuna, tomatoes, olives, cheese and mushrooms",
           price: 300,
         },
         {
           id: uuidv4(),
           imgSrc: require("@/assets/images/tnt.png"),
           title: "TNT pizza",
+          description:
+            "Our TNT pizza is really good. Smoked ribs, bacon, sausage and if all that wasn't enough, beans, onions, chili",
           price: 100,
         },
         {
           id: uuidv4(),
           imgSrc: require("@/assets/images/sajtos.png"),
           title: "Cheese pizza",
+          description:
+            "Cheese pizza is made with a tomato pizza base. We use a combination of 3 types of cheese, especially for cheese lovers",
           price: 100,
         },
         {
           id: uuidv4(),
           imgSrc: require("@/assets/images/mexikoi.png"),
           title: "Mexico pizza",
+          description:
+            "A Mexikói pizzánk bőséges feltétei önmagukért beszélnek - paradicsomos pizza alap, sonka, bacon, kukorica",
           price: 100,
         },
         {
           id: uuidv4(),
           imgSrc: require("@/assets/images/csirkemelles.png"),
           title: "Chicken pizza",
+          description:
+            "We also prepared our chicken pizzas with a sour cream base for those who don't like the tomato pizza base",
           price: 100,
         },
       ],

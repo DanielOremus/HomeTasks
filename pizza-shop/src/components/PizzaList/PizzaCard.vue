@@ -1,16 +1,19 @@
 <template>
   <div class="card-container">
     <div><img :src="pizza.imgSrc" alt="" /></div>
-    <div>{{ pizza.title }}</div>
-    <div>{{ pizza.price * multiplier }} грн</div>
-    <div>
-      <v-radio-group v-model="size" height="20px">
+    <div class="pizza-title">
+      {{ pizza.title }}
+    </div>
+    <div class="pizza-description">{{ pizza.description }}</div>
+    <div class="pizza-price">{{ pizza.price * multiplier }} грн</div>
+    <div class="radio-buttons">
+      <v-radio-group v-model="size">
         <v-radio :value="24" label="24 cм"></v-radio>
         <v-radio :value="36" label="36 cм"></v-radio>
         <v-radio :value="45" label="45 cм"></v-radio>
       </v-radio-group>
     </div>
-    <div><v-btn @click="onAdd" :disabled="!this.size">+</v-btn></div>
+    <v-btn @click="onAdd" :disabled="!this.size" id="btn">Add to Card</v-btn>
   </div>
 </template>
 
@@ -56,14 +59,47 @@ export default {
 
 <style lang="css" scoped>
 .card-container {
-  width: 200px;
-  border: 2px solid black;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 20px;
+  border: 4px solid transparent;
+  padding: 15px;
   text-align: center;
+  background-image: url("@/assets/images/card-bg.png");
+  background-repeat: repeat;
+  transition: 0.4s;
+}
+
+.card-container:hover {
+  background-image: linear-gradient(rgb(67, 67, 67), rgb(67, 67, 67));
+  border: 4px solid #fdbc2c;
 }
 .card-container img {
-  width: 130px;
+  width: 250px;
+}
+#btn {
+  margin-top: -30px;
+  background-color: #fdbc2c;
+  font-style: black;
+  width: 200px;
+}
+.pizza-title {
+  font: 22px Arial;
+  color: #fdbc2c;
+}
+.pizza-price {
+  font: 28px Tahoma;
+  color: #d94f2b;
+}
+.pizza-description {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  font: 15px sans-serif;
+  color: white;
+}
+.radio-buttons {
+  color: white;
 }
 </style>

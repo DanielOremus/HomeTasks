@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="bg-image">
       <slot name="header">
         <h2>Pizzeria</h2>
         <h3>Welcome, customer</h3>
@@ -10,7 +10,7 @@
       <slot> Немає контенту </slot>
     </div>
     <div></div>
-    <v-footer class="bg-grey-lighten-1">
+    <v-footer class="footer">
       <v-row justify="center" no-gutters>
         <v-btn
           color="white"
@@ -55,5 +55,13 @@ export default {
 <style lang="css" scoped>
 div {
   text-align: center;
+}
+.footer {
+  background-color: rgb(67, 67, 67);
+}
+.bg-image {
+  background-image: url("@/assets/images/card-bg.png");
+  background-repeat: repeat;
+  color: white;
 }
 </style>
