@@ -9,7 +9,7 @@ export default {
           imgSrc: require("@/assets/images/janicsar.png"),
           title: "Health pizza",
           description:
-            "The Janicsár pizza dough is spread with a sour cream base and topped with sheep's cheese, gyros meat, red onion and paprika",
+            "The Health pizza dough is spread with a sour cream base and topped with sheep's cheese, gyros meat, red onion and paprika",
           price: 100,
         },
         {
@@ -49,7 +49,7 @@ export default {
           imgSrc: require("@/assets/images/mexikoi.png"),
           title: "Mexico pizza",
           description:
-            "A Mexikói pizzánk bőséges feltétei önmagukért beszélnek - paradicsomos pizza alap, sonka, bacon, kukorica",
+            "The abundant toppings of our Mexican pizza speak for themselves - tomato pizza base, ham, bacon, corn",
           price: 100,
         },
         {

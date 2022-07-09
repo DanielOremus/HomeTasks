@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr;
+  min-height: calc(100vh - 202px);
+}
+.fields {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.line {
+  border-left: 3px solid white;
+  height: 250px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.body {
+  background-image: url("@/assets/images/bg.jpg");
+  background-size: cover;
+}

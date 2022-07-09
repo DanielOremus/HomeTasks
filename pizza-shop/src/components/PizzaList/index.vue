@@ -22,10 +22,4 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-.container {
-  display: grid;
-  grid-template-columns: 288px 288px 288px 288px;
-  justify-content: center;
-}
-</style>
+<style lang="css" scoped src="@/assets/styles/pizza-list.css"></style>

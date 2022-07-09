@@ -1,10 +1,38 @@
 <template>
   <div>
-    <div class="bg-image">
-      <slot name="header">
-        <h2>Pizzeria</h2>
-        <h3>Welcome, customer</h3>
-      </slot>
+    <div class="bg">
+      <div class="menu">
+        <div>
+          <img
+            :src="pizzaMenuImage"
+            alt="Menu"
+            @click="$router.push('/list')"
+          />
+        </div>
+        <div class="margin-img"><img :src="saleImage" alt="Sale" /></div>
+        <div class="searchArea">
+          <v-text-field
+            label="Search pizza"
+            v-model="searchWord"
+            variant="outlined"
+          ></v-text-field>
+        </div>
+        <div class="margin-img">
+          <img :src="logoImage" alt="Logo" @click="$router.push('/')" />
+        </div>
+
+        <div class="info"><span>Information</span></div>
+        <div class="contact"><span>Contact Us</span></div>
+        <div class="total">
+          <span
+            ><router-link
+              to="/cart"
+              style="text-decoration: none; color: inherit"
+              >Total: {{ getTotalPizzaPrice }} грн</router-link
+            ></span
+          >
+        </div>
+      </div>
     </div>
     <div>
       <slot> Немає контенту </slot>
@@ -46,22 +74,29 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "MainMasterPage",
-  data: () => ({}),
+  data() {
+    return {
+      pizzaMenuImage: require("@/assets/images/pizza-menu.png"),
+      saleImage: require("@/assets/images/sale.png"),
+      logoImage: require("@/assets/images/pizzeria-logo.png"),
+      searchWord: null,
+    };
+  },
+  computed: {
+    ...mapGetters("pizza", ["getTotalPizzaPrice"]),
+  },
+  watch: {
+    searchWord(newValue) {
+      this.setSearchWord(newValue);
+    },
+  },
+  methods: {
+    ...mapActions("pizza", ["setSearchWord"]),
+  },
 };
 </script>
 
-<style lang="css" scoped>
-div {
-  text-align: center;
-}
-.footer {
-  background-color: rgb(67, 67, 67);
-}
-.bg-image {
-  background-image: url("@/assets/images/card-bg.png");
-  background-repeat: repeat;
-  color: white;
-}
-</style>
+<style lang="css" scoped src="@/assets/styles/master-page.css"></style>

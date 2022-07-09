@@ -1,0 +1,44 @@
+div {
+  text-align: center;
+}
+.footer {
+  background-color: rgb(67, 67, 67);
+}
+.bg {
+  background-image: url("@/assets/images/card-bg.png");
+  background-repeat: repeat;
+  color: white;
+}
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  transition: all 0.4s;
+  height: 110px;
+  border-bottom: 4px solid #d94f2b;
+}
+.menu img {
+  transition: 0.5s;
+}
+.menu img:hover {
+  transform: scale(0.9);
+}
+
+.menu .contact,
+.menu .info,
+.menu .total {
+  padding: 3em 0;
+  text-align: center;
+  font-weight: bold;
+}
+span {
+  transition: 0.5s;
+}
+span:hover {
+  color: yellow;
+}
+.menu .searchArea {
+  padding: 2em 0;
+}
+.margin-img {
+  margin-top: 10px;
+}
