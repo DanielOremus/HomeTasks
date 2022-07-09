@@ -1,79 +1,28 @@
-import { v4 as uuidv4 } from "uuid";
+import apiEndpoints from "@/constants/apiEndpoints";
+import axios from "axios";
 export default {
   namespaced: true,
   state() {
     return {
-      pizzaList: [
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/janicsar.png"),
-          title: "Health pizza",
-          description:
-            "The Health pizza dough is spread with a sour cream base and topped with sheep's cheese, gyros meat, red onion and paprika",
-          price: 100,
-        },
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/hawai.png"),
-          title: "Hawaii pizza",
-          description:
-            "Hawaiian pizza is also made with a tomato pizza base, lots of ham, corn, pineapple and cheese. It owes its sweet and sour taste",
-          price: 200,
-        },
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/calipso.png"),
-          title: "Calypso pizza",
-          description:
-            "Spread the Calypso pizza dough with sour cream and tuna, tomatoes, olives, cheese and mushrooms",
-          price: 300,
-        },
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/tnt.png"),
-          title: "TNT pizza",
-          description:
-            "Our TNT pizza is really good. Smoked ribs, bacon, sausage and if all that wasn't enough, beans, onions, chili",
-          price: 100,
-        },
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/sajtos.png"),
-          title: "Cheese pizza",
-          description:
-            "Cheese pizza is made with a tomato pizza base. We use a combination of 3 types of cheese, especially for cheese lovers",
-          price: 100,
-        },
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/mexikoi.png"),
-          title: "Mexico pizza",
-          description:
-            "The abundant toppings of our Mexican pizza speak for themselves - tomato pizza base, ham, bacon, corn",
-          price: 100,
-        },
-        {
-          id: uuidv4(),
-          imgSrc: require("@/assets/images/csirkemelles.png"),
-          title: "Chicken pizza",
-          description:
-            "We also prepared our chicken pizzas with a sour cream base for those who don't like the tomato pizza base",
-          price: 100,
-        },
-      ],
+      pizzaList: [],
       searchWord: null,
       filteredPizzaList: [],
+      loading: false,
+      error: false,
     };
   },
   getters: {
+    isLoading: (state) => state.loading,
+    isError: (state) => state.error,
     pizzaList: (state) => state.pizzaList,
+
     getPizzaById: (state) => (pizzaId) =>
-      state.pizzaList.find((item) => item.id === pizzaId),
+      state.pizzaList.find((item) => toString(item._id) === toString(pizzaId)),
     getTotalPizzaPrice: (state, getters, rootState, rootGetters) => {
       const cartList = rootGetters["cart/cartList"];
       return cartList.reduce((prevSum, cartItem) => {
         const pizza = state.pizzaList.find(
-          (item) => item.id === cartItem.pizzaId
+          (item) => item._id === cartItem.pizzaId
         );
         let multiplier = 0;
         switch (cartItem.size) {
@@ -90,6 +39,7 @@ export default {
         return Math.round(prevSum + multiplier * cartItem.count * pizza.price);
       }, 0);
     },
+
     filteredPizzaList(state) {
       if (state.searchWord) {
         return (state.filteredPizzaList = state.pizzaList.filter((item) =>
@@ -101,11 +51,39 @@ export default {
     },
   },
   mutations: {
+    setLoading(state, data) {
+      state.loading = data;
+    },
+    setPizzas(state, data) {
+      state.pizzaList = data;
+    },
+    setError(state, data) {
+      state.error = data;
+    },
     setSearchWord(state, searchWord) {
       state.searchWord = searchWord;
     },
   },
   actions: {
+    loadPizzas({ commit }) {
+      commit("setLoading", true);
+      commit("setError", false);
+      axios
+        .get(apiEndpoints.pizzas.getList)
+        .then((res) => res.data)
+        .then((resData) => {
+          if (resData.success) commit("setPizzas", resData.data);
+          else throw new Error("Fatch failed!");
+        })
+        .catch((err) => {
+          //Якщо погано
+          commit("setError", err);
+        })
+        .finally(
+          //Завжди
+          () => commit("setLoading", false)
+        );
+    },
     setSearchWord({ commit }, newSearchWord) {
       commit("setSearchWord", newSearchWord);
     },

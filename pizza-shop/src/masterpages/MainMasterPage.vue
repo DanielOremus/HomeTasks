@@ -66,7 +66,7 @@
         >
 
         <v-col class="text-center text-white mt-4" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Pizzeria</strong>
+          {{ new Date().getFullYear() }} — <strong>Pizza House</strong>
         </v-col>
       </v-row>
     </v-footer>

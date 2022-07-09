@@ -48,7 +48,7 @@ export default {
     ...mapActions("cart", ["addPizzaToCart"]),
     onAdd() {
       const data = {
-        pizzaId: this.pizza.id,
+        pizzaId: this.pizza._id,
         pizzaSize: this.size,
       };
       this.addPizzaToCart(data);

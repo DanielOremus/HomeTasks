@@ -5,8 +5,8 @@ const pizzaScheme = new Schema({
   title: String,
   price: Number,
   imgSrc: String,
-  size: Number,
+  description: String,
 });
 //Створення моделі
-const BookModel = mongoose.model("Book", bookScheme);
-module.exports = BookModel;
+const PizzaModel = mongoose.model("Pizza", pizzaScheme);
+module.exports = PizzaModel;
