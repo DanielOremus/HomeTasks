@@ -17,7 +17,7 @@ export default {
     pizzaList: (state) => state.pizzaList,
 
     getPizzaById: (state) => (pizzaId) =>
-      state.pizzaList.find((item) => toString(item._id) === toString(pizzaId)),
+      state.pizzaList.find((item) => item._id == pizzaId),
     getTotalPizzaPrice: (state, getters, rootState, rootGetters) => {
       const cartList = rootGetters["cart/cartList"];
       return cartList.reduce((prevSum, cartItem) => {

@@ -1,12 +1,26 @@
 <template>
-  <div v-if="cartList.length">
-    <pizza-row
-      v-for="item in cartList"
-      :key="item.id"
-      :cart-item="item"
-    ></pizza-row>
+  <div v-if="cartList.length" class="cart-list-body">
+    <table>
+      <tr>
+        <th></th>
+        <th>Picture</th>
+        <th>Title</th>
+        <th>Price per one</th>
+        <th>Size</th>
+        <th></th>
+        <th>Count</th>
+        <th></th>
+        <th>Total Price</th>
+      </tr>
+      <pizza-row
+        v-for="item in cartList"
+        :key="item.id"
+        :cart-item="item"
+        class="pizza-row"
+      ></pizza-row>
+    </table>
   </div>
-  <div v-else>Корзина пуста :(</div>
+  <div v-else>Cart is Empty :(</div>
 </template>
 
 <script>
@@ -23,4 +37,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped src="@/assets/styles/cart-list.css"></style>

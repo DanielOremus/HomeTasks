@@ -1,0 +1,16 @@
+th {
+  padding: 15px 0 15px 0;
+  margin-bottom: 15px;
+  color: white;
+  background-color: #222;
+  border-bottom: 3px solid salmon;
+}
+.cart-list-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 200px 0 200px;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}

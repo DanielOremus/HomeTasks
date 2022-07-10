@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="body">
     <main-master-page>
-      <h4>Cart</h4>
-      <div>
-        <div v-if="cartList.length">Total: {{ getTotalPizzaPrice }} грн</div>
+      <div class="container">
+        <div class="content-lable">Cart Content</div>
+        <div>
+          <cart-list />
+        </div>
       </div>
-      <cart-list />
     </main-master-page>
   </div>
 </template>
@@ -22,9 +23,8 @@ export default {
   },
   computed: {
     ...mapGetters("pizza", ["getTotalPizzaPrice"]),
-    ...mapGetters("cart", ["cartList"]),
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped src="@/assets/styles/cart-page.css"></style>

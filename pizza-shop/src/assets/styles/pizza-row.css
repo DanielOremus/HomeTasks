@@ -1,0 +1,38 @@
+.pizza-row-container {
+  justify-content: center;
+  margin-top: 20px;
+}
+.pizza-row-container td img {
+  width: 80px;
+}
+button {
+  font-size: 20px;
+}
+.sub-delete:hover {
+  color: rgb(229, 132, 132);
+  transform: scale(1.5);
+}
+.add {
+  color: rgb(74, 210, 0);
+  transition: 0.5s;
+}
+.add:hover {
+  transform: scale(1.5);
+  color: rgb(195, 255, 105);
+}
+.sub-delete {
+  transition: 0.3s;
+  color: red;
+  font-size: 20px;
+}
+* {
+  color: #d94f2b;
+}
+td {
+  padding: 15px 0 15px 0;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+tr {
+  border-bottom: 3px solid black;
+}

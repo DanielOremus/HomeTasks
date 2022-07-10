@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="bg">
+  <div class="content">
+    <div class="menu-bg">
       <div class="menu">
         <div>
           <img

@@ -1,19 +1,20 @@
 <template>
-  <div class="pizza-row-container">
-    <div>
+  <tr class="pizza-row-container">
+    <td><button class="sub-delete" @click="onDelete">x</button></td>
+    <td>
       <img :src="pizza.imgSrc" alt="" />
-    </div>
-    <div>
-      {{ pizza.title }} | {{ pizza.price * cartItem.count * multiplier }} грн |
-      {{ cartItem.size }} см
-    </div>
-    <div>
-      <v-btn small @click="onDecrement">-</v-btn>
-      <span>{{ cartItem.count }}</span>
-      <v-btn small @click="onIncrement">+</v-btn>
-      <v-btn small @click="onDelete">x</v-btn>
-    </div>
-  </div>
+    </td>
+    <td>{{ pizza.title }}</td>
+    <td>{{ pizza.price * multiplier }} грн</td>
+    <td>{{ cartItem.size }} см</td>
+
+    <td><button class="sub-delete" @click="onDecrement">--</button></td>
+    <td>
+      {{ cartItem.count }}
+    </td>
+    <td><button class="add" @click="onIncrement">+</button></td>
+    <td>{{ pizza.price * cartItem.count * multiplier }} грн</td>
+  </tr>
 </template>
 
 <script>
@@ -68,14 +69,4 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-.pizza-row-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  border: 2px solid black;
-}
-.pizza-row-container img {
-  width: 80px;
-}
-</style>
+<style lang="css" scoped src="@/assets/styles/pizza-row.css"></style>
