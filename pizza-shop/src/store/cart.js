@@ -38,6 +38,9 @@ export default {
     onDelete(state, itemId) {
       state.cartList = state.cartList.filter((item) => item.id !== itemId);
     },
+    onClear(state) {
+      state.cartList = [];
+    },
   },
   actions: {
     addPizzaToCart({ commit }, data) {
@@ -55,6 +58,9 @@ export default {
           commit("onDelete", payload.value);
           break;
       }
+    },
+    clearCartAction({ commit }) {
+      commit("onClear");
     },
   },
 };

@@ -2,7 +2,6 @@
   <div class="body">
     <main-master-page>
       <div class="container">
-        <div class="content-lable">Cart Content</div>
         <div>
           <cart-list />
         </div>

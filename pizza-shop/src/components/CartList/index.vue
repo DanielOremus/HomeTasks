@@ -1,31 +1,37 @@
 <template>
-  <div v-if="cartList.length" class="cart-list-body">
+  <div class="cart-list-body">
     <table>
       <tr>
-        <th></th>
+        <th class="empty-th"></th>
         <th>Picture</th>
         <th>Title</th>
         <th>Price per one</th>
         <th>Size</th>
-        <th></th>
+        <th class="empty-th"></th>
         <th>Count</th>
-        <th></th>
+        <th class="empty-th"></th>
         <th>Total Price</th>
       </tr>
       <pizza-row
         v-for="item in cartList"
         :key="item.id"
         :cart-item="item"
-        class="pizza-row"
       ></pizza-row>
+      <tr class="last-tr" v-if="cartList.length">
+        <td colspan="7" @click="onClear"><button>Clear the Cart</button></td>
+        <td>Total:</td>
+        <td>{{ getTotalPizzaPrice }} грн</td>
+      </tr>
     </table>
+    <div v-if="!cartList.length" class="empty-cart-lable">
+      Cart is Empty. Please, choose some product.
+    </div>
   </div>
-  <div v-else>Cart is Empty :(</div>
 </template>
 
 <script>
 import PizzaRow from "@/components/CartList/PizzaRow.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "CartList",
   components: {
@@ -33,6 +39,13 @@ export default {
   },
   computed: {
     ...mapGetters("cart", ["cartList"]),
+    ...mapGetters("pizza", ["getTotalPizzaPrice"]),
+  },
+  methods: {
+    ...mapActions("cart", ["clearCartAction"]),
+    onClear() {
+      this.clearCartAction();
+    },
   },
 };
 </script>

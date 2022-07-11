@@ -1,16 +1,61 @@
 th {
-  padding: 15px 0 15px 0;
+  padding: 10px 0 10px 0;
   margin-bottom: 15px;
   color: white;
   background-color: #222;
-  border-bottom: 3px solid salmon;
+  border-bottom: 4px solid #d94f2b;
+  position: sticky;
+  top: 0;
+  width: 100px;
 }
 .cart-list-body {
   display: grid;
   grid-template-columns: 1fr;
-  margin: 0 200px 0 200px;
+  margin: 0 300px 0 300px;
 }
 table {
   border-spacing: 0;
   border-collapse: collapse;
+  margin-top: 70px;
+}
+.empty-cart-lable {
+  font-size: 30px;
+  margin-top: 30px;
+  color: #fdbc2c;
+}
+.empty-th {
+  width: 30px;
+}
+thead,
+tbody {
+  display: block;
+}
+tbody {
+  max-height: 100px;
+  overflow: auto;
+}
+.last-tr {
+  font-family: sans-serif;
+  color: #fdbc2c;
+  font-size: 20px;
+}
+.last-tr td {
+  padding-top: 20px;
+}
+.last-tr :first-child {
+  text-align: left;
+}
+button {
+  background-color: #fdbc2c;
+  color: black;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+button:hover {
+  transform: scale(0.9);
+}
+.last-tr td:last-child {
+  color: #d94f2b;
 }
