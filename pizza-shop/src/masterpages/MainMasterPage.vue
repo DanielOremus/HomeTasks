@@ -9,7 +9,10 @@
             @click="$router.push('/list')"
           />
         </div>
-        <div class="margin-img"><img :src="saleImage" alt="Sale" /></div>
+        <div class="margin-img">
+          <img :src="saleImage" alt="Sale" />
+          <div class="content">No sales for now</div>
+        </div>
         <div class="searchArea">
           <v-text-field
             label="Search pizza"

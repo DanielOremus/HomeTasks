@@ -79,3 +79,16 @@ span:hover {
 .margin-img {
   margin-top: 10px;
 }
+.margin-img .content {
+  display: none;
+  position: absolute;
+  color: white;
+  background-image: url("@/assets/images/cart-bg.png");
+  background-repeat: repeat;
+  min-width: 14.5%;
+  margin-top: 3px;
+}
+.margin-img:hover .content {
+  display: flex;
+  justify-content: center;
+}
