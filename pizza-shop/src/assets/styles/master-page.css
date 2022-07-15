@@ -31,6 +31,42 @@ div {
   text-align: center;
   font-weight: bold;
 }
+.info .content {
+  display: none;
+  position: absolute;
+  color: white;
+  background-image: url("@/assets/images/cart-bg.png");
+  background-repeat: repeat;
+  min-width: 14.5%;
+  margin-top: 40px;
+}
+.contact .content {
+  padding: 0 30px;
+  display: none;
+  position: absolute;
+  color: white;
+  background-image: url("@/assets/images/cart-bg.png");
+  background-repeat: repeat;
+  min-width: calc(14.5%+ 30px);
+  margin-top: 40px;
+}
+.info .content {
+  display: none;
+  position: absolute;
+  color: white;
+  background-image: url("@/assets/images/cart-bg.png");
+  background-repeat: repeat;
+  min-width: 14.5%;
+  margin-top: 40px;
+}
+.contact span:hover .content {
+  display: flex;
+  justify-content: center;
+}
+.info span:hover .content {
+  display: flex;
+  justify-content: center;
+}
 span {
   transition: 0.5s;
 }
@@ -38,7 +74,7 @@ span:hover {
   color: yellow;
 }
 .menu .searchArea {
-  padding: 2em 0;
+  padding: 1.5em 0;
 }
 .margin-img {
   margin-top: 10px;

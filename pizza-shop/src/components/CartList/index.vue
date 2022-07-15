@@ -5,7 +5,7 @@
         <th class="empty-th"></th>
         <th>Picture</th>
         <th>Title</th>
-        <th>Price per one</th>
+        <th>Price</th>
         <th>Size</th>
         <th class="empty-th"></th>
         <th>Count</th>

@@ -13,16 +13,40 @@
         <div class="searchArea">
           <v-text-field
             label="Search pizza"
-            v-model="searchWord"
+            v-model.lazy="searchWord"
             variant="outlined"
+            v-on:keydown.enter="this.setSearchWord(this.searchWord)"
           ></v-text-field>
         </div>
         <div class="margin-img">
           <img :src="logoImage" alt="Logo" @click="$router.push('/')" />
         </div>
 
-        <div class="info"><span>Information</span></div>
-        <div class="contact"><span>Contact Us</span></div>
+        <div class="info">
+          <span
+            >Information
+            <div class="content">
+              We are open: <br />
+              <br />
+              Mon: 09:00 - 22:30 <br />
+              Tue: 09:30 - 22:00 <br />
+              Wen: 10:00 - 22:30 <br />
+              Thu: 09:00 - 22:30 <br />
+              Fri: 09:30 - 22:00 <br />
+              Sat: 11:00 - 20:00 <br />
+              Sun: 11:00 - 20:00
+            </div>
+          </span>
+        </div>
+        <div class="contact">
+          <span
+            >Contact Us
+            <div class="content">
+              Phone number : 050 000 0000 <br />
+              Adress: Uzhhorod, Korzo st.
+            </div></span
+          >
+        </div>
         <div class="total">
           <span
             ><router-link
@@ -88,11 +112,7 @@ export default {
   computed: {
     ...mapGetters("pizza", ["getTotalPizzaPrice"]),
   },
-  watch: {
-    searchWord(newValue) {
-      this.setSearchWord(newValue);
-    },
-  },
+
   methods: {
     ...mapActions("pizza", ["setSearchWord"]),
   },

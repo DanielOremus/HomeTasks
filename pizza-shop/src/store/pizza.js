@@ -15,7 +15,7 @@ export default {
     isLoading: (state) => state.loading,
     isError: (state) => state.error,
     pizzaList: (state) => state.pizzaList,
-
+    getSearchWord: (state) => state.searchWord,
     getPizzaById: (state) => (pizzaId) =>
       state.pizzaList.find((item) => item._id == pizzaId),
     getTotalPizzaPrice: (state, getters, rootState, rootGetters) => {
@@ -39,16 +39,6 @@ export default {
         return Math.round(prevSum + multiplier * cartItem.count * pizza.price);
       }, 0);
     },
-
-    filteredPizzaList(state) {
-      if (state.searchWord) {
-        return (state.filteredPizzaList = state.pizzaList.filter((item) =>
-          item.title.toLowerCase().includes(state.searchWord.toLowerCase())
-        ));
-      } else {
-        return state.pizzaList;
-      }
-    },
   },
   mutations: {
     setLoading(state, data) {
@@ -65,11 +55,13 @@ export default {
     },
   },
   actions: {
-    loadPizzas({ commit }) {
+    loadPizzas({ commit, state }) {
       commit("setLoading", true);
       commit("setError", false);
       axios
-        .get(apiEndpoints.pizzas.getList)
+        .get(apiEndpoints.pizzas.getList, {
+          params: { searchParams: state.searchWord },
+        })
         .then((res) => res.data)
         .then((resData) => {
           if (resData.success) commit("setPizzas", resData.data);
@@ -84,8 +76,9 @@ export default {
           () => commit("setLoading", false)
         );
     },
-    setSearchWord({ commit }, newSearchWord) {
+    setSearchWord({ commit, dispatch }, newSearchWord) {
       commit("setSearchWord", newSearchWord);
+      dispatch("loadPizzas");
     },
   },
 };

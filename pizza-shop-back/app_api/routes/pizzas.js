@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const pizzasController = require("../controllers/pizzas"); // Підключення контролера
-/* GET список книг. */
+
 router.get("/", pizzasController.getList);
 /* GET видалення книги за id. */
 /* POST Створення нової книги. */

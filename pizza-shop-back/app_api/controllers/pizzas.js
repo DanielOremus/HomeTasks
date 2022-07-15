@@ -6,8 +6,10 @@ const sendJSONResponse = (res, status, content) => {
 };
 
 module.exports.getList = function (req, res) {
-  console.log(req.query);
-  const searchObj = req.query.searchParams || {};
+  let searchObj = {};
+  if (req.query.searchParams) {
+    searchObj = { title: req.query.searchParams };
+  }
   PizzaModel.find(searchObj, function (err, pizzas) {
     if (err) {
       return sendJSONResponse(res, 500, {

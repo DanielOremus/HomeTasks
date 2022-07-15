@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import MainMasterPage from "@/masterpages/MainMasterPage.vue";
 import PizzaList from "@/components/PizzaList";
 export default {
@@ -14,6 +15,12 @@ export default {
   components: {
     MainMasterPage,
     PizzaList,
+  },
+  methods: {
+    ...mapActions("pizza", ["setSearchWord"]),
+  },
+  mounted() {
+    this.setSearchWord(null);
   },
 };
 </script>
