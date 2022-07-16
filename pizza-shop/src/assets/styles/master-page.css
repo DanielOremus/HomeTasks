@@ -3,7 +3,6 @@ div {
 }
 .footer {
   background-color: rgb(67, 67, 67);
-  flex: 1 0 auto;
 }
 .menu-bg {
   background-image: url("@/assets/images/card-bg.png");

@@ -45,8 +45,8 @@
           <span
             >Contact Us
             <div class="content">
-              Phone number : 050 000 0000 <br />
-              Adress: Uzhhorod, Korzo st.
+              Phone number: 050 000 0000 <br />
+              Adress: Uzhhorod, Korzo st. 3
             </div></span
           >
         </div>
@@ -65,39 +65,39 @@
       <slot> Немає контенту </slot>
     </div>
     <div></div>
-    <v-footer class="footer">
-      <v-row justify="center" no-gutters>
-        <v-btn
-          color="white"
-          variant="text"
-          class="mx-2"
-          rounded="xl"
-          @click="$router.push('/')"
-          >HOME</v-btn
-        >
-        <v-btn
-          color="white"
-          variant="text"
-          class="mx-2"
-          rounded="xl"
-          @click="$router.push('/list')"
-          >LIST</v-btn
-        >
-        <v-btn
-          color="white"
-          variant="text"
-          class="mx-2"
-          rounded="xl"
-          @click="$router.push('/cart')"
-          >CART</v-btn
-        >
-
-        <v-col class="text-center text-white mt-4" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Pizza House</strong>
-        </v-col>
-      </v-row>
-    </v-footer>
   </div>
+  <v-footer class="footer">
+    <v-row justify="center" no-gutters>
+      <v-btn
+        color="white"
+        variant="text"
+        class="mx-2"
+        rounded="xl"
+        @click="$router.push('/')"
+        >HOME</v-btn
+      >
+      <v-btn
+        color="white"
+        variant="text"
+        class="mx-2"
+        rounded="xl"
+        @click="$router.push('/list')"
+        >LIST</v-btn
+      >
+      <v-btn
+        color="white"
+        variant="text"
+        class="mx-2"
+        rounded="xl"
+        @click="$router.push('/cart')"
+        >CART</v-btn
+      >
+
+      <v-col class="text-center text-white mt-4" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Pizza House</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
 </template>
 
 <script>

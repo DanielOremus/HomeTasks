@@ -2,25 +2,20 @@
   <div class="body">
     <main-master-page>
       <div class="container">
-        <div class="fields">
-          <login-field></login-field>
-        </div>
-        <div class="line"></div>
-        <div class="fields"><register-field></register-field></div>
+        Want to taste delicious pizza?<br />
+        We have good news! <br />
+        ↓ Just click a button below ↓
       </div>
+      <div><v-btn id="btn" @click="$router.push('/list')">Click</v-btn></div>
     </main-master-page>
   </div>
 </template>
 <script>
 import MainMasterPage from "@/masterpages/MainMasterPage.vue";
-import LoginField from "@/components/LoginField";
-import RegisterField from "@/components/RegisterField";
 export default {
   name: "HomePage",
   components: {
     MainMasterPage,
-    LoginField,
-    RegisterField,
   },
 };
 </script>
