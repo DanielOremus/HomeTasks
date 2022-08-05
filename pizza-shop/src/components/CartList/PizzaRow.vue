@@ -5,7 +5,7 @@
       <img :src="pizza.imgSrc" alt="" />
     </td>
     <td>{{ pizza.title }}</td>
-    <td>{{ pizza.price * multiplier }} грн</td>
+    <td>{{ Math.round(pizza.price * multiplier) }} грн</td>
     <td>{{ cartItem.size }} см</td>
 
     <td><button class="sub-delete" @click="onDecrement">--</button></td>
@@ -13,7 +13,7 @@
       {{ cartItem.count }}
     </td>
     <td><button class="add" @click="onIncrement">+</button></td>
-    <td>{{ pizza.price * cartItem.count * multiplier }} грн</td>
+    <td>{{ Math.round(pizza.price * cartItem.count * multiplier) }} грн</td>
   </tr>
 </template>
 

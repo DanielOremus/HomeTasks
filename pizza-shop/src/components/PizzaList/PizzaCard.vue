@@ -5,7 +5,9 @@
       {{ pizza.title }}
     </div>
     <div class="pizza-description">{{ pizza.description }}</div>
-    <div class="pizza-price">{{ pizza.price * multiplier }} грн</div>
+    <div class="pizza-price">
+      {{ Math.round(pizza.price * multiplier) }} грн
+    </div>
     <div class="radio-buttons">
       <v-radio-group v-model="size">
         <v-radio :value="24" label="24 cм"></v-radio>
