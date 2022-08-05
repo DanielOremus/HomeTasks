@@ -30,10 +30,10 @@ export default {
             multiplier = 1;
             break;
           case 36:
-            multiplier = 1.7;
+            multiplier = 1.4;
             break;
           case 45:
-            multiplier = 2.89;
+            multiplier = 2.3;
             break;
         }
         return Math.round(prevSum + multiplier * cartItem.count * pizza.price);

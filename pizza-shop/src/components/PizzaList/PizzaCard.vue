@@ -40,9 +40,9 @@ export default {
         default:
           return 1;
         case 36:
-          return 1.7;
+          return 1.4;
         case 45:
-          return 2.89;
+          return 2.3;
       }
     },
   },
