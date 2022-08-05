@@ -1,9 +1,6 @@
 div {
   text-align: center;
 }
-.footer {
-  background-color: rgb(67, 67, 67);
-}
 .menu-bg {
   background-image: url("@/assets/images/card-bg.png");
   background-repeat: repeat;
@@ -90,4 +87,16 @@ span:hover {
 .margin-img:hover .content {
   display: flex;
   justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.top {
+  flex-grow: 1;
+}
+.footer {
+  background-color: rgb(67, 67, 67);
 }
